@@ -68,7 +68,7 @@
     <div class="container hidden" id="imageContainer">
         <div class="image-container">
             <!-- Replace "images/your-image.jpeg" with your actual image path -->
-            <img src="images/your-image.jpeg" alt="" id="displayedImage" onerror="hideImage()">
+            <img src="images/your-image.jpeg" alt="" width="600" height="400" id="displayedImage" onerror="hideImage()">
         </div>
     </div>
 
@@ -84,6 +84,9 @@
             if (img.complete && img.naturalHeight !== 0) {
                 // Image loaded successfully, show the container
                 document.getElementById('imageContainer').classList.remove('hidden');
+            } else {
+                // Image failed to load, ensure container is hidden
+                hideImage();
             }
         };
     </script>
